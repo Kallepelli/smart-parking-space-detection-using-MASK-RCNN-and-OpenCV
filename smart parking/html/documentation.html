@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Smart Parking Space Detection</title>
+    <link rel="stylesheet" href="css/stylesdocumentation.css">
+</head>
+<body>
+    <header>
+        <h1>Documentation for Smart Parking Space Detection</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="auth.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="documentation">
+            <h2>Documentation for Smart Parking Space Detection</h2>
+            
+            <h3>1. Introduction</h3>
+            <p>The Smart Parking Space Detection system utilizes <strong>MASK-RCNN</strong> and <strong>OpenCV</strong> to automatically detect available parking spaces in real-time from camera feeds. This documentation provides an overview of the system, including setup instructions, usage guidelines, and technical details.</p>
+            
+            <h3>2. System Requirements</h3>
+            <p>Before installing and using the Smart Parking Space Detection system, ensure that your environment meets the following requirements:</p>
+            <ul>
+                <li><strong>Operating System:</strong> Windows, macOS, or Linux</li>
+                <li><strong>Python Version:</strong> 3.7 or higher</li>
+                <li><strong>Libraries:</strong>
+                    <ul>
+                        <li><strong>TensorFlow:</strong> 2.x</li>
+                        <li><strong>OpenCV:</strong> 4.x</li>
+                        <li><strong>NumPy:</strong> 1.19 or higher</li>
+                        <li><strong>Mask-RCNN:</strong> Available from the <a href="https://github.com/matterport/Mask_RCNN" target="_blank">Mask-RCNN GitHub repository</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>3. Installation</h3>
+            <p>Follow these steps to set up the Smart Parking Space Detection system:</p>
+            <ol>
+                <li><strong>Clone the Repository:</strong>
+                    <pre><code>git clone https://github.com/your-repository/smart-parking-space-detection.git
+cd smart-parking-space-detection</code></pre>
+                </li>
+                <li><strong>Create a Virtual Environment:</strong>
+                    <pre><code>python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate</code></pre>
+                </li>
+                <li><strong>Install Dependencies:</strong>
+                    <pre><code>pip install -r requirements.txt</code></pre>
+                    The <code>requirements.txt</code> file should include:
+                    <pre><code>tensorflow==2.x
+opencv-python==4.x
+numpy==1.19</code></pre>
+                </li>
+                <li><strong>Download Pre-Trained Models:</strong> Download the pre-trained Mask-RCNN weights from <a href="https://github.com/matterport/Mask_RCNN/releases" target="_blank">this link</a> and place them in the <code>models</code> directory.</li>
+            </ol>
+            
+            <h3>4. Configuration</h3>
+            <p>Configure the camera and model settings in the <code>config.py</code> file:</p>
+            <pre><code>CAMERA_IP = 'http://your-camera-ip'
+MODEL_WEIGHTS_PATH = 'models/mask_rcnn_coco.h5'</code></pre>
+            <ul>
+                <li><strong>CAMERA_IP:</strong> URL or IP address of the camera providing the video feed.</li>
+                <li><strong>MODEL_WEIGHTS_PATH:</strong> Path to the pre-trained Mask-RCNN model weights.</li>
+            </ul>
+            
+            <h3>5. Running the System</h3>
+            <p>To start the parking space detection system, execute the following command:</p>
+            <pre><code>python detect_parking_spaces.py</code></pre>
+            <p>This script will initialize the camera feed, process the video using the Mask-RCNN model, and display the detected parking spaces in real-time.</p>
+            
+            <h3>6. Usage</h3>
+            <p>
+                <ul>
+                    <li><strong>Access the System:</strong> Open the web interface by navigating to <code>http://localhost:5000</code> in your web browser.</li>
+                    <li><strong>View Detection Results:</strong> The system will display live video with overlaid markings indicating detected parking spaces.</li>
+                </ul>
+            </p>
+            
+            <h3>7. Troubleshooting</h3>
+            <ul>
+                <li><strong>Issue:</strong> Camera feed not displaying.<br><strong>Solution:</strong> Check the CAMERA_IP configuration and ensure the camera is online.</li>
+                <li><strong>Issue:</strong> Model not loading.<br><strong>Solution:</strong> Verify that the model weights file is correctly placed in the <code>models</code> directory and that the path in <code>config.py</code> is accurate.</li>
+            </ul>
+            
+            <h3>8. Contribution</h3>
+            <p>To contribute to the project, follow these guidelines:</p>
+            <ol>
+                <li><strong>Fork the Repository:</strong> Click on the "Fork" button on the GitHub repository page.</li>
+                <li><strong>Create a Branch:</strong>
+                    <pre><code>git checkout -b feature/your-feature</code></pre>
+                </li>
+                <li><strong>Make Changes and Commit:</strong>
+                    <pre><code>git add .
+git commit -m "Add your feature"</code></pre>
+                </li>
+                <li><strong>Push and Create a Pull Request:</strong>
+                    <pre><code>git push origin feature/your-feature</code></pre>
+                    - Submit a pull request with a clear description of the changes.
+                </li>
+            </ol>
+            
+            <h3>9. License</h3>
+            <p>This project is licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>. See the <code>LICENSE</code> file for details.</p>
+            
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Smart Parking System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

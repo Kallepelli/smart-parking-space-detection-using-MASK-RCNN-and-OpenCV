@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Smart Parking System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Smart Parking System Dashboard</h1>
+    </header>
+    
+    <main>
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="#camera-config">Camera Configuration</a></li>
+                    <li><a href="#run-detection">Run Detection</a></li>
+                    <li><a href="#view-results">View Results</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <section id="camera-config">
+            <h2>Camera Configuration</h2>
+            <form>
+                <label for="camera-ip">Camera IP Address:</label>
+                <input type="text" id="camera-ip" name="camera-ip" required>
+                
+                <label for="camera-port">Camera Port:</label>
+                <input type="text" id="camera-port" name="camera-port" required>
+                
+                <label for="frame-rate">Frame Rate:</label>
+                <select id="frame-rate" name="frame-rate">
+                    <option value="15">15 FPS</option>
+                    <option value="30">30 FPS</option>
+                    <option value="60">60 FPS</option>
+                </select>
+                
+                <label for="resolution">Resolution:</label>
+                <select id="resolution" name="resolution">
+                    <option value="720p">720p</option>
+                    <option value="1080p">1080p</option>
+                    <option value="4k">4K</option>
+                </select>
+                
+                <button type="button" class="btn">Test Connection</button>
+                <button type="submit" class="btn">Save Settings</button>
+            </form>
+        </section>
+        
+        <section id="run-detection">
+            <h2>Run Detection</h2>
+            <button class="btn"><a href="run-detection.html">Start Detection</a></button>
+            <button class="btn">View Live Stream</button>
+            <button class="btn">Stop Detection</button>
+        </section>
+        
+        <section id="view-results">
+            <h2>View Results</h2>
+            <div class="results-grid">
+                <!-- Placeholder for detection results -->
+            </div>
+            <button class="btn">Download Results</button>
+        </section>
+        
+        <section id="settings">
+            <h2>Settings</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                
+                <button type="submit" class="btn">Save Changes</button>
+            </form>
+            <button class="btn">Log Out</button>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Smart Parking System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
